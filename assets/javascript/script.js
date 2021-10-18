@@ -31,23 +31,18 @@ function getPasswordOptions() {
   var hasSpecialCharacters = confirm(
     'Click OK to confirm including special characters.'
   );
-
+ // Variable to store boolean regarding the inclusion of numeric characters
   var hasNumericCharacters = confirm(
     'Click OK to confirm including numeric characters.'
   );
-
+ // Variable to store boolean regarding the inclusion of lowercase characters
   var hasLowerCharacters = confirm(
     'Click OK to confirm including lower characters.'
   );
-
+  // Variable to store boolean regarding the inclusion of uppercase characters
   var hasUpperCharacters = confirm(
     'Click OK to confirm including upper characters.'
   );
-  // Variable to store boolean regarding the inclusion of numeric characters
-  // Variable to store boolean regarding the inclusion of lowercase characters
-  // Variable to store boolean regarding the inclusion of uppercase characters
-  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
-  // Object to store user input then return that object
 
   let options = {
     length,
@@ -64,6 +59,8 @@ function generatePassword() {
   let options = getPasswordOptions();
   let results = [];
   let possibleChar = [];
+
+  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
 
   if (options.hasSpecialCharacters === true) {
     for (let i = 0; i < options.length; i++) {
@@ -101,6 +98,7 @@ function generatePassword() {
     }
   }
 
+  // Object to store user input then return that object
   for (let i = 0; i < options.length; i++) {
     let randomIndex = Math.floor(Math.random() * possibleChar.length);
     let randomChar = possibleChar[randomIndex];
@@ -125,39 +123,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// function getPasswordOptions() {
-//     // Variable to store length of password from user input
-//     var length = parseInt(
-//       prompt('How many characters would you like your password to contain?')
-//     );
-//     // Conditional statement to check if password length is a number. Prompts end if this evaluates false
-//     if (Number.isNaN(length)) {
-//       alert('Password length must be provided as a number');
-//       return null;
-//     }
-//     // Conditional statement to check if password length is at least 8 characters long. Prompts end if this evaluates false
-//     if (length < 8) {
-//       alert('Password length must be at least 8 characters');
-//       return null;
-//     }
-//     // Conditional statement to check if password length is less than 128 characters long. Prompts end if this evaluates false
-//     if (length > 128) {
-//       alert('Password length must less than 129 characters');
-//       return null;
-//     }
-//     // Variable to store boolean regarding the inclusion of special characters
-//     var hasSpecialCharacters = confirm(
-//       'Click OK to confirm including special characters.'
-//     );
-//     // Variable to store boolean regarding the inclusion of numeric characters
-//     // Variable to store boolean regarding the inclusion of lowercase characters
-//     // Variable to store boolean regarding the inclusion of uppercase characters
-//     // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
-//     // Object to store user input then return that object
-//   }
-//   white_check_mark
-//   eyes
-//   raised_hands
-//8:59
-//This is some starter code for the challenge 3, you can add this right after you set your global variable of the character arrays
